@@ -15,7 +15,12 @@ class GET:
         with open(('image/'+checksum+'.png'),'wb') as w:
             w.write(requestsimage.content)
         return True
-
+    def POINT():
+        data = {"gameid": datatxt.GAMEID}
+        requestpoint = requests.post(datatxt.URL_CHECKPOINT,headers=datatxt.HEADER_CHECKPOINT,data=data)
+        point = json.loads(requestpoint.text)
+        upoint = point['point']
+        print("You have %s Point" % (upoint))
 
 class POST:
 
